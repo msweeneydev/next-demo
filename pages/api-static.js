@@ -7,7 +7,15 @@ export default () => {
   const getGreeting = async e => {
     e.preventDefault();
     const { value: name } = e.target.greeting;
-    setGreeting(`Hello, ${name}!`);
+    const res = await fetch(`/api/user/name`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(name)
+    });
+    const newGreeting = await res.text();
+    setGreeting(newGreeting);
   };
 
   return (
