@@ -30,7 +30,7 @@ export default () => {
       <h1>{greeting}</h1>
       <form onSubmit={getGreeting}>
         <label>
-          <strong>Name</strong>
+          <strong>Set Name</strong>
         </label>
         <input name="greeting" type="text" defaultValue="" required />
         <button type="submit">Greet Me!</button>
